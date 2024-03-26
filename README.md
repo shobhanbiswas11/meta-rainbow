@@ -1,6 +1,6 @@
 
 # Run the application using docker and docker-compose
-- Make sure These values are set. unless you won't be able to sign in
+- Make sure These values are set in the docker-compose env. unless you won't be able to sign in
   - ADMIN_NAME: "Admin"
   - ADMIN_EMAIL: "admin@metarainbow.com"
   - ADMIN_PASSWORD: "admin"

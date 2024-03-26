@@ -27,7 +27,9 @@ export default function LoginForm() {
           isRequired
         />
         <input type="hidden" name="callbackUrl" value={"/"} />
-        <div>{errorMessage && <p>{errorMessage}</p>}</div>
+        <div className="text-danger-500">
+          {errorMessage && <p>{errorMessage}</p>}
+        </div>
         <SubmitButton fullWidth color="primary">
           Login
         </SubmitButton>

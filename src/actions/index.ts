@@ -11,12 +11,18 @@ export async function authenticate(_currentState: unknown, formData: FormData) {
   const email = formData.get("email");
   const password = formData.get("password");
   if (!email || !password) return "Cannot be empty";
-  await signIn("credentials", {
-    email,
-    password,
-    redirectTo: "/",
-  });
-  return "";
+
+  try {
+    await signIn("credentials", {
+      email,
+      password,
+    });
+  } catch (error) {
+    if ((error as any).message === "NEXT_REDIRECT") {
+      throw error;
+    }
+    return "Authentication Failed";
+  }
 }
 
 export async function logout() {

@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import { generate } from "password-hash";
 import prisma from "../src/db";
 
 async function main() {
@@ -16,6 +17,7 @@ async function main() {
         data: {
           email: user.email,
           name: user.name,
+          password: generate("root"),
         },
       });
     })

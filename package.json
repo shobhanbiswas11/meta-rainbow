@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:start": "prisma migrate reset --force && prisma generate && npm run build && npm run start",
     "lint": "next lint"
   },
   "prisma": {

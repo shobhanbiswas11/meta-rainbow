@@ -21,7 +21,7 @@ export default function AuthenticatedRoute({ children }: Props) {
     return (
       <div>
         <Header />
-        <div className="pt-10">{children}</div>
+        <div className="py-10">{children}</div>
       </div>
     );
   }
